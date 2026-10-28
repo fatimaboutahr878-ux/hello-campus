@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 // --- TP2 guidée (Notes) ---
 const etudiants = [
@@ -11,7 +11,7 @@ const etudiants = [
 const total = etudiants.reduce((s, e) => s + e.note, 0);
 const moyenne = total / etudiants.length;
 
-// --- TP2 autonome (Catalogue) ---
+// --- TP1 autonome (Catalogue) ---
 const produits = [
   { id: 1, nom: "Clavier", prix: 120, stock: 5 },
   { id: 2, nom: "Souris", prix: 80, stock: 8 },
@@ -33,7 +33,7 @@ export default function App() {
           <Text style={[styles.btnText, page==='notes' && styles.btnTextActive]}>TP2 Notes</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={()=>setPage('catalogue')} style={[styles.btnMenu, page==='catalogue' && styles.btnActive]}>
-          <Text style={[styles.btnText, page==='catalogue' && styles.btnTextActive]}>TP2 Catalogue</Text>
+          <Text style={[styles.btnText, page==='catalogue' && styles.btnTextActive]}>TP1 Catalogue</Text>
         </TouchableOpacity>
       </View>
 
@@ -47,7 +47,7 @@ export default function App() {
         </View>
       ) : (
         <View style={styles.ecran}>
-          <Text style={styles.titre}>TP2 Autonome - Catalogue</Text>
+          <Text style={styles.titre}>TP1 Autonome - Catalogue</Text>
           <Text style={styles.moyenne}>Disponibles: {disponibles.length}</Text>
           <Text style={styles.moyenne}>Valeur: {valeurTotale} MAD</Text>
           <Text style={styles.moyenne}>Moins cher: {moinsCher ? `${moinsCher.nom} ${moinsCher.prix} MAD` : 'Aucun produit disponible'}</Text>
